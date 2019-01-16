@@ -24,4 +24,7 @@ InData5<- select(InData4, -Total)
 InData5<- select(InData5, TotalG, Taxon, Scenario, Nutrients) # rearrange again so TotalG is first
 InData5
 
+InData5$Nutrients<- gsub("(\\w)\\w+", "\\1", InData5$Nutrients) # replace each string in 'Nutrients' with its first letter
+InData5
+
 
