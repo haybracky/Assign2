@@ -13,19 +13,3 @@
 library(dplyr) # load the dplyr package
 InData<- read.csv("InData.csv") # load dataset 
 
-InData2<- select(InData, Total, Taxon, Scenario, Nutrients) # arrange data & remove other col's
-head(InData2)
-
-InData3<-filter(InData2,Total>=60) # remove entries with total less than 60
-InData3
-
-InData4<- mutate(InData3, TotalG = Total/1000) # convert mg to g
-InData5<- select(InData4, -Total)
-InData5<- select(InData5, TotalG, Taxon, Scenario, Nutrients) # rearrange again so TotalG is first
-InData5
-
-InData5$Nutrients<- gsub("(\\w)\\w+", "\\1", InData5$Nutrients) # replace each string in 'Nutrients' with its first letter
-InData5
-
-InData5$TotalG<- gsub("\\.", ",", InData5$TotalG) # replace '.' with ',' in 'TotalG'
-InData5
