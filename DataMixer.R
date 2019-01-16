@@ -16,4 +16,7 @@ InData<- read.csv("InData.csv") # load dataset
 InData2<- select(InData, Total, Taxon, Scenario, Nutrients) # arrange data & remove other col's
 head(InData2)
 
+InData3<-filter(InData2,Total>=60) # remove entries with total less than 60
+InData3
+
 
