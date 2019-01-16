@@ -27,4 +27,5 @@ InData5
 InData5$Nutrients<- gsub("(\\w)\\w+", "\\1", InData5$Nutrients) # replace each string in 'Nutrients' with its first letter
 InData5
 
-
+InData5$TotalG<- gsub("\\.", ",", InData5$TotalG) # replace '.' with ',' in 'TotalG'
+InData5
