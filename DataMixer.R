@@ -13,3 +13,7 @@
 library(dplyr) # load the dplyr package
 InData<- read.csv("InData.csv") # load dataset 
 
+InData2<- select(InData, Total, Taxon, Scenario, Nutrients) # arrange data & remove other col's
+head(InData2)
+
+
